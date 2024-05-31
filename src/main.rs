@@ -8,7 +8,7 @@ fn main() -> pdb::Result<()> {
     let pdb = PDBSource::new(r"T:\source\CPP\Erd-Tools-CPP\x64\Release\ErdTools.pdb")?;
 
     {
-        let type_finder = pdb.type_finder()?;
+        let type_finder = pdb.type_finder();
 
         let t = type_finder.find(TypeIndex(0x12e2))?.parse()?;
         println!("{t:#?}");
